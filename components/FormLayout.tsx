@@ -1,4 +1,5 @@
 import { Container, createStyles, rem } from "@mantine/core";
+import { ContainedInputs } from "./Form";
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -16,7 +17,7 @@ export function FormLayout() {
 
   return(
     <div className={classes.root}>
-      some form content
+      <ContainedInputs/>
   </div>
     )
 }
