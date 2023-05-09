@@ -15,6 +15,7 @@ const useStyles = createStyles((theme) => ({
   inner: {
     display: 'flex',
     justifyContent: 'space-between',
+    alignItems: 'center',
 
     [theme.fn.smallerThan('md')]: {
       flexDirection: 'column',
@@ -28,6 +29,10 @@ const useStyles = createStyles((theme) => ({
   },
 
   content: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'start',
     paddingTop: `calc(${theme.spacing.xl} * 2)`,
     paddingBottom: `calc(${theme.spacing.xl} * 2)`,
     marginRight: `calc(${theme.spacing.xl} * 3)`,
@@ -56,10 +61,6 @@ const useStyles = createStyles((theme) => ({
     color: theme.white,
     opacity: 0.75,
     maxWidth: rem(500),
-
-    [theme.fn.smallerThan('md')]: {
-      maxWidth: '100%',
-    },
   },
 
   control: {
