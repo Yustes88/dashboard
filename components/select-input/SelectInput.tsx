@@ -9,12 +9,14 @@ export function SelectInput({form}: any) {
   return (
     <div className={classes.container}>
        <Autocomplete
-      label="Origin"
-      placeholder="Enter city or airport"
+      mt="md"
+      withinPortal
       data={['New York', 'Los Angeles', 'Chicago']}
+      placeholder="From"
+      classNames={classes}
       {...form.getInputProps('origin')}
     />
-      <Select
+      <Autocomplete
         mt="md"
         withinPortal
         data={['New York', 'Los Angeles', 'Chicago']}
