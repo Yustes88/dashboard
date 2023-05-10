@@ -9,12 +9,12 @@ interface QuantityInputProps {
   min?: number;
   max?: number;
   setValue: Dispatch<SetStateAction<number | "">>;
-  value: number | "";
+  handlers: any;
 }
 
-export function QuantityInput({ min = 1, max = 10, value, setValue }: QuantityInputProps) {
+export function QuantityInput({ min = 1, max = 10, setValue, handlers }: QuantityInputProps) {
   const { classes } = useStyles();
-  const handlers = useRef<NumberInputHandlers>(null);
+  const value = 0;
 
   return (
     <div className={classes.wrapper}>

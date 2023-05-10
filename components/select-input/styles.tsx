@@ -13,7 +13,6 @@ export const useStyles = createStyles((theme) => ({
 
   input: {
     height: rem(54),
-    paddingTop: rem(18),
   },
 
   label: {

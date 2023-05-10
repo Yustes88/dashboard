@@ -8,6 +8,7 @@ import { useStyles } from './styles';
 import { SelectInput } from '../select-input/SelectInput';
 import { DataPicker } from '../data-picker/DataPicker';
 import { ExtraInputs } from '../extra-input/ExtraInput';
+import { Buttons } from '../buttons/Button';
 
 
 
@@ -29,6 +30,8 @@ export function Form() {
       <DataPicker/>
       
       <ExtraInputs/>
+
+      <Buttons type='submit' text='Find ticket'/>
 
     </div>
     </form>

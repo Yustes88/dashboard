@@ -1,12 +1,11 @@
-import { useState } from 'react';
-import { createStyles, UnstyledButton, Menu, Image, Group, rem } from '@mantine/core';
+import { useRef, useState } from 'react';
+import { createStyles, UnstyledButton, Menu, Image, Group, rem, NumberInputHandlers } from '@mantine/core';
 import { IconChevronDown } from '@tabler/icons-react';
 import { useStyles } from './styles';
 import { QuantityInput } from '../number-input/NumberInput';
 
 const data = [
   { label: 'Adults', comment: 'older than 12' },
-  { label: 'Children', comment: 'between 2 and 12' },
 ];
 
 
@@ -15,6 +14,8 @@ export function ExtraInputs() {
   const [opened, setOpened] = useState(false);
   const { classes } = useStyles({ opened });
   const [value, setValue] = useState<number | ''>(1);
+  const handlers = useRef<NumberInputHandlers>(null);
+
 
   const items = data.map((item) => (
     <div key={item.label} style={{display: 'flex', justifyContent: 'space-between'}}>
@@ -26,7 +27,7 @@ export function ExtraInputs() {
         {item.comment}
           </div>
         </div>
-      <QuantityInput value={value} setValue={setValue}/>
+      <QuantityInput setValue={setValue} handlers={handlers}/>
     </div>
   ));
 
