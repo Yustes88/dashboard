@@ -1,7 +1,6 @@
-'use client'
-import { createStyles, Container, Title, Text, Button, rem } from '@mantine/core';
+import { createStyles, rem } from "@mantine/core";
 
-const useStyles = createStyles((theme) => ({
+export const useStyles = createStyles((theme) => ({
   root: {
     backgroundColor: '#11284b',
     backgroundSize: 'cover',
@@ -74,44 +73,3 @@ const useStyles = createStyles((theme) => ({
     },
   },
 }));
-
-export function Header() {
-  const { classes } = useStyles();
-  return (
-    <div className={classes.root}>
-      <Container size="lg">
-        <div className={classes.inner}>
-          <div className={classes.content}>
-            <Title className={classes.title}>
-              Explore{' '}
-              <Text
-                component="span"
-                inherit
-                variant="gradient"
-                gradient={{ from: 'pink', to: 'yellow' }}
-              >
-                the world
-              </Text>{' '}
-              together
-            </Title>
-
-            <Text className={classes.description} mt={30}>
-              Build fully functional accessible web applications with ease – Mantine includes more
-              than 100 customizable components and hooks to cover you in any situation
-            </Text>
-
-            <Button
-              variant="gradient"
-              gradient={{ from: 'pink', to: 'yellow' }}
-              size="xl"
-              className={classes.control}
-              mt={40}
-            >
-              Get started
-            </Button>
-          </div>
-        </div>
-      </Container>
-    </div>
-  );
-}
