@@ -1,26 +1,27 @@
-import { Select } from '@mantine/core';
+import { Autocomplete, Select } from '@mantine/core';
 import { useStyles } from './styles';
 
 
-
-export function SelectInput() {
+//TODO types
+export function SelectInput({form}: any) {
   const { classes } = useStyles();
 
   return (
     <div className={classes.container}>
+       <Autocomplete
+      label="Origin"
+      placeholder="Enter city or airport"
+      data={['New York', 'Los Angeles', 'Chicago']}
+      {...form.getInputProps('origin')}
+    />
       <Select
         mt="md"
         withinPortal
-        data={['React', 'Angular', 'Svelte', 'Vue']}
-        placeholder="From"
-        classNames={classes}
-      />
-      <Select
-        mt="md"
-        withinPortal
-        data={['React', 'Angular', 'Svelte', 'Vue']}
+        data={['New York', 'Los Angeles', 'Chicago']}
         placeholder="To"
         classNames={classes}
+        {...form.getInputProps('destination')}
+
       />
 
     </div>

@@ -2,8 +2,8 @@ import { DatePickerInput } from '@mantine/dates';
 import { useStyles } from './styles';
 
 
-
-export function DataPicker() {
+//TODO types
+export function DataPicker({form}: any) {
   const { classes } = useStyles();
 
   return (
@@ -15,6 +15,7 @@ export function DataPicker() {
     placeholder="When will you go?"
     classNames={classes}
     clearable={false}
+    {...form.getInputProps('departDate')}
   />
   );
 }

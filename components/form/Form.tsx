@@ -9,6 +9,7 @@ import { SelectInput } from '../select-input/SelectInput';
 import { DataPicker } from '../data-picker/DataPicker';
 import { ExtraInputs } from '../extra-input/ExtraInput';
 import { Buttons } from '../buttons/Button';
+import { useForm } from '@mantine/form';
 
 
 
@@ -19,19 +20,32 @@ export function Form() {
 
   const { classes } = useStyles();
 
+  const form = useForm({
+    initialValues: {
+      origin: '',
+      destination: '',
+      departDate: null,
+      adults: 0,
+    },
+  }
+  );
+
 
 
   return (
     <form>
     <div className={classes.container}>
 
-      <SelectInput/>
+      <SelectInput form={form}/>
 
-      <DataPicker/>
+      <DataPicker form={form}/>
       
-      <ExtraInputs/>
+      <ExtraInputs form={form}/>
 
-      <Buttons type='submit' text='Find ticket'/>
+      <Buttons type='submit' text='Find ticket' onClick = {(evt) => {
+        evt.preventDefault()
+        console.log(form.values)
+      }}/>
 
     </div>
     </form>

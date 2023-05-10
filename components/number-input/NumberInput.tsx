@@ -10,9 +10,10 @@ interface QuantityInputProps {
   max?: number;
   setValue: Dispatch<SetStateAction<number | "">>;
   handlers: any;
+  form: any;
 }
 
-export function QuantityInput({ min = 1, max = 10, setValue, handlers }: QuantityInputProps) {
+export function QuantityInput({ min = 1, max = 10, setValue, handlers, form }: QuantityInputProps) {
   const { classes } = useStyles();
   const value = 0;
 
@@ -37,6 +38,8 @@ export function QuantityInput({ min = 1, max = 10, setValue, handlers }: Quantit
         value={value}
         onChange={setValue}
         classNames={{ input: classes.input }}
+        {...form.getInputProps('adults')}
+
       />
 
       <ActionIcon<'button'>

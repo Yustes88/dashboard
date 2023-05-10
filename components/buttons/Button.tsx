@@ -4,9 +4,10 @@ import { useStyles } from './styles';
 interface ButtonsProps {
   type: "button" | "submit" | "reset" | undefined;
   text: string;
+  onClick: (evt: any) => void
 }
 
-export function Buttons({type, text}: ButtonsProps) {
+export function Buttons({type, text, onClick}: ButtonsProps) {
   const { classes } = useStyles();
 
   return (
@@ -17,6 +18,7 @@ export function Buttons({type, text}: ButtonsProps) {
               className={classes.control}
               mt={type === 'submit' ? 15 : 40}
               type={type}
+              onClick={onClick}
             >
               {text}
             </Button>

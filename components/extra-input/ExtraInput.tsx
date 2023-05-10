@@ -9,8 +9,8 @@ const data = [
 ];
 
 
-
-export function ExtraInputs() {
+//
+export function ExtraInputs({form}: any) {
   const [opened, setOpened] = useState(false);
   const { classes } = useStyles({ opened });
   const [value, setValue] = useState<number | ''>(1);
@@ -27,7 +27,7 @@ export function ExtraInputs() {
         {item.comment}
           </div>
         </div>
-      <QuantityInput setValue={setValue} handlers={handlers}/>
+      <QuantityInput setValue={setValue} handlers={handlers} form={form}/>
     </div>
   ));
 
