@@ -12,7 +12,7 @@ export function DataPicker() {
     mt="md"
     popoverProps={{ withinPortal: true }}
     label="Departure date"
-    placeholder="When will you leave?"
+    placeholder="When will you go?"
     classNames={classes}
     clearable={false}
   />

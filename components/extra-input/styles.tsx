@@ -2,7 +2,7 @@ import { createStyles, rem } from "@mantine/core";
 
 export const useStyles = createStyles((theme, { opened }: { opened: boolean }) => ({
   control: {
-    width: rem(200),
+    width: rem(300),
     height: rem(55),
     marginTop: theme.spacing.md,
     display: 'flex',

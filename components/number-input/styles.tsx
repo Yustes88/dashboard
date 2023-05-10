@@ -5,6 +5,7 @@ export const useStyles = createStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
+    width: '40%',
     padding: `${rem(6)} ${theme.spacing.xs}`,
     borderRadius: theme.radius.sm,
     border: `${rem(1)} solid ${

@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { Dispatch, SetStateAction, useRef, useState } from 'react';
 import { NumberInput, NumberInputHandlers, ActionIcon } from '@mantine/core';
 import { IconPlus, IconMinus } from '@tabler/icons-react';
 import { useStyles } from './styles';
@@ -8,12 +8,13 @@ import { useStyles } from './styles';
 interface QuantityInputProps {
   min?: number;
   max?: number;
+  setValue: Dispatch<SetStateAction<number | "">>;
+  value: number | "";
 }
 
-export function QuantityInput({ min = 1, max = 10 }: QuantityInputProps) {
+export function QuantityInput({ min = 1, max = 10, value, setValue }: QuantityInputProps) {
   const { classes } = useStyles();
   const handlers = useRef<NumberInputHandlers>(null);
-  const [value, setValue] = useState<number | ''>(1);
 
   return (
     <div className={classes.wrapper}>

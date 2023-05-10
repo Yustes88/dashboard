@@ -2,11 +2,11 @@ import { useState } from 'react';
 import { createStyles, UnstyledButton, Menu, Image, Group, rem } from '@mantine/core';
 import { IconChevronDown } from '@tabler/icons-react';
 import { useStyles } from './styles';
+import { QuantityInput } from '../number-input/NumberInput';
 
 const data = [
   { label: 'Adults', comment: 'older than 12' },
   { label: 'Children', comment: 'between 2 and 12' },
-  { label: 'Babies', comment: 'under 2, no place' },
 ];
 
 
@@ -14,14 +14,20 @@ const data = [
 export function ExtraInputs() {
   const [opened, setOpened] = useState(false);
   const { classes } = useStyles({ opened });
-  const [selected, setSelected] = useState(data[0]);
+  const [value, setValue] = useState<number | ''>(1);
+
   const items = data.map((item) => (
-    <Menu.Item
-      onClick={() => setSelected(item)}
-      key={item.label}
-    >
-      {item.label}
-    </Menu.Item>
+    <div key={item.label} style={{display: 'flex', justifyContent: 'space-between'}}>
+      <div style={{color: 'black', display: 'flex', flexDirection: 'column'}}>
+        <div>
+          {item.label}
+       </div>
+          <div style={{color: 'gray', opacity: '0.5'}}>
+        {item.comment}
+          </div>
+        </div>
+      <QuantityInput value={value} setValue={setValue}/>
+    </div>
   ));
 
   return (
@@ -35,7 +41,7 @@ export function ExtraInputs() {
       <Menu.Target>
         <UnstyledButton className={classes.control}>
           <Group spacing="xs">
-            <span className={classes.label}>{selected.label}</span>
+            <span className={classes.label}>{value} passenger</span>
           </Group>
           <IconChevronDown size="1rem" className={classes.icon} stroke={1.5} />
         </UnstyledButton>
