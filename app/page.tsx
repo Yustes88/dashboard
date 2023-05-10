@@ -1,7 +1,7 @@
 'use client'
 
-import { FormLayout } from "@/components/FormLayout"
 import { Header } from "@/components/Header"
+import { FormLayout } from "@/components/form-layout/FormLayout"
 
 export default function Home() {
   return (
