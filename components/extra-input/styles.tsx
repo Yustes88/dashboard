@@ -3,10 +3,12 @@ import { createStyles, rem } from "@mantine/core";
 export const useStyles = createStyles((theme, { opened }: { opened: boolean }) => ({
   control: {
     width: rem(200),
+    height: rem(55),
+    marginTop: theme.spacing.md,
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: `${theme.spacing.xs} ${theme.spacing.md}`,
+    padding: `0 ${theme.spacing.md}`,
     borderRadius: theme.radius.md,
     border: `${rem(1)} solid ${
       theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[2]
