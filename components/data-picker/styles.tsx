@@ -1,10 +1,14 @@
-import { createStyles } from "@mantine/core";
+import { createStyles, rem } from "@mantine/core";
 
 export const useStyles = createStyles((theme) => ({
   root: {
     position: 'relative',
   },
 
+  input: {
+    height: rem(54),
+    paddingTop: rem(18),
+  },
 
   label: {
     position: 'absolute',
@@ -14,4 +18,5 @@ export const useStyles = createStyles((theme) => ({
     paddingTop: `calc(${theme.spacing.sm} / 2)`,
     zIndex: 1,
   },
+
 }));
