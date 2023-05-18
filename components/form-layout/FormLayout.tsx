@@ -1,3 +1,4 @@
+'use client'
 import { useStyles } from "./styles";
 import { Form } from "../form/Form";
 
