@@ -18,13 +18,12 @@ export default async function Home() {
     <Header/>
     <main>
       <FormLayout/>
+      <SwitchesCard data={MockData.data}/>
     </main>
     
-    {/* <SwitchesCard data={MockData.data}/> */}
     <div>
     {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
     </div>
-    {/* <Button onClick={handleClick}>click me</Button> */}
     </>
   )
 }
