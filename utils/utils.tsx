@@ -7,3 +7,7 @@ export function getDuration(item: FlightOffer) {
 export function getCarrierCode(item: FlightOffer) {
   return item.itineraries[0].segments[0].carrierCode
 }
+
+export function getFlightNumber(item: FlightOffer) {
+  return item.itineraries[0].segments[0].number
+}

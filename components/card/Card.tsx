@@ -1,6 +1,6 @@
 'use client'
 import { FlightOffer } from '@/types/types';
-import { getCarrierCode, getDuration } from '@/utils/utils';
+import { getCarrierCode, getDuration, getFlightNumber } from '@/utils/utils';
 import { createStyles, Card, Group, Switch, Text, rem, Badge, Col, Grid, Title } from '@mantine/core';
 
 
@@ -63,7 +63,7 @@ export function SwitchesCard({ data }: SwitchesCardProps) {
       <Text weight={500}>Airline</Text>
       <Text>{getCarrierCode(item)}</Text>
       <Text weight={500}>Flight No.</Text>
-      <Text>3</Text>
+      <Text>{getFlightNumber(item)}</Text>
     </Col>
   </Grid>
 </Card>
