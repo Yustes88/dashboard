@@ -1,6 +1,6 @@
 'use client'
 import { FlightOffer } from '@/types/types';
-import { getArrivalCode, getCarrierCode, getDepartureCode, getDepartureTime, getDuration, getFlightNumber } from '@/utils/utils';
+import { getArrivalCode, getArrivalTime, getCarrierCode, getDepartureCode, getDepartureTime, getDuration, getFlightNumber } from '@/utils/utils';
 import { createStyles, Card, Group, Switch, Text, rem, Badge, Col, Grid, Title } from '@mantine/core';
 
 
@@ -53,7 +53,7 @@ export function SwitchesCard({ data }: SwitchesCardProps) {
     <Col span={3}>
       <Text weight={500}>Arrival</Text>
       <Text>{getArrivalCode(item)}</Text>
-      <Text weight={500}>6:55 PM</Text>
+      <Text weight={500}>{getArrivalTime(item)}</Text>
     </Col>
     <Col span={3}>
       <Text weight={500}>Duration</Text>

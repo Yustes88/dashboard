@@ -31,3 +31,7 @@ export function getDepartureTime(item: FlightOffer) {
   return getTime(item.itineraries[0].segments[0].departure.at)
 }
 
+export function getArrivalTime(item: FlightOffer) {
+  return getTime(item.itineraries[0].segments[item.itineraries[0].segments.length - 1].arrival.at)
+}
+
