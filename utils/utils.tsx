@@ -16,6 +16,10 @@ export function getDepartureCode(item: FlightOffer) {
   return item.itineraries[0].segments[0].departure.iataCode
 }
 
+export function getArrivalCode(item: FlightOffer) {
+  return item.itineraries[0].segments[item.itineraries[0].segments.length - 1].arrival.iataCode
+}
+
 function getTime(timeString: string) {
   const [datePart, timePart] = timeString.split('T');
   const [hours, minutes] = timePart.split(':');
