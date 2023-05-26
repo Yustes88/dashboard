@@ -1,5 +1,6 @@
 'use client'
 import { FlightOffer } from '@/types/types';
+import { getDuration } from '@/utils/utils';
 import { createStyles, Card, Group, Switch, Text, rem, Badge, Col, Grid, Title } from '@mantine/core';
 
 
@@ -56,7 +57,7 @@ export function SwitchesCard({ data }: SwitchesCardProps) {
     </Col>
     <Col span={3}>
       <Text weight={500}>Duration</Text>
-      <Text>8h 20m</Text>
+      <Text>{getDuration(item)}</Text>
     </Col>
     <Col span={3}>
       <Text weight={500}>Airline</Text>
