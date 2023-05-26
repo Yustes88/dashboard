@@ -11,3 +11,7 @@ export function getCarrierCode(item: FlightOffer) {
 export function getFlightNumber(item: FlightOffer) {
   return item.itineraries[0].segments[0].number
 }
+
+export function getDepartureCode(item: FlightOffer) {
+  return item.itineraries[0].segments[0].departure.iataCode
+}
